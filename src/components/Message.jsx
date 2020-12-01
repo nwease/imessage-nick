@@ -7,6 +7,7 @@ function Message() {
     return (
         <div className='message'>
             <Sidebar/>
+            <Chat />
         </div>
     );
 }
