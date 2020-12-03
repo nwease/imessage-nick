@@ -21,6 +21,7 @@
 
 .chat__name {
     color: black;
+    padding-left: 5px;
 }
 
 .chat__messages {

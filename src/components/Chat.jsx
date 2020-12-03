@@ -2,10 +2,15 @@ import React, {useState} from 'react';
 import '../css/Chat.css';
 import MicNoneIcon from '@material-ui/icons/MicNone';
 import IconButton from '@material-ui/core/IconButton';
+import ChatMessage from './ChatMessage';
+import {useSelector} from "react-redux";
+import {selectChatName} from '../features/chatSlice';
 
 function Chat() {
 
     const [input, setInput] = useState('');
+    // const [messages, setMessages] = useState([]);
+    const chatName = useSelector(selectChatName);
 
     const sendMessage = (e) => {
         e.preventDefault();
@@ -20,8 +25,9 @@ function Chat() {
             <div className='chat__header'>
                 <h4>
                     To:
+
                     <span className='chat__name'>
-                        Channel Name
+                        {chatName}
                     </span>
                 </h4>
 
@@ -31,25 +37,11 @@ function Chat() {
             </div>
 
             <div className='chat__messages'>
-                <h2>
-                    I am a message
-                </h2>
-
-                <h2>
-                    I am a message
-                </h2>
-
-                <h2>
-                    I am a message
-                </h2>
-
-                <h2>
-                    I am a message
-                </h2>
-
-                <h2>
-                    I am a message
-                </h2>
+                <ChatMessage />
+                <ChatMessage />
+                <ChatMessage />
+                <ChatMessage />
+                <ChatMessage />
             </div>
 
             <div className='chat__input'>

@@ -5,8 +5,10 @@ import {auth, provider} from '../firebase';
 
 function Login() {
 
-    const signIn = (e) => {
-        e.preventDefault();
+    const signIn = () => {
+        auth.signInWithPopup(provider)
+
+            .catch(e => alert(e.message));
     }
 
     return (
